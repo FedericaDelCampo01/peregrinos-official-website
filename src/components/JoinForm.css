@@ -63,14 +63,25 @@
   background: #93978f;
 }
 
+.join-form button:disabled {
+  background: #93978f;
+  cursor: not-allowed;
+}
+
 .join-form span {
   color: #a13b42;
   font-size: 13px;
 }
 
-.join-form > p {
+.join-form__success {
   margin: 0;
   color: #21593b;
+  font-size: 14px;
+}
+
+.join-form__error {
+  margin: 0;
+  color: #a13b42;
   font-size: 14px;
 }
 

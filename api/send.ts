@@ -1,0 +1,74 @@
+import { Resend } from 'resend'
+
+const resend = new Resend(process.env.RESEND_API_KEY)
+
+type SendBody = {
+  fullName: string
+  email: string
+  message: string
+  helpIntent: string
+}
+
+function escapeHtml(str: string): string {
+  return str
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+}
+
+export default async function handler(req: Request): Promise<Response> {
+  if (req.method !== 'POST') {
+    return Response.json({ error: 'Method not allowed' }, { status: 405 })
+  }
+
+  let body: SendBody
+  try {
+    body = await req.json()
+  } catch {
+    return Response.json({ error: 'Invalid request body' }, { status: 400 })
+  }
+
+  const { fullName, email, message, helpIntent } = body
+
+  if (!fullName?.trim() || !email?.trim() || !message?.trim()) {
+    return Response.json({ error: 'Missing required fields' }, { status: 400 })
+  }
+
+  const { error } = await resend.emails.send({
+    from: 'Peregrinos <noreply@peregrinos.uy>',
+    to: 'movimiento.peregrinos@gmail.com',
+    replyTo: email,
+    subject: `Nuevo mensaje de ${fullName}`,
+    html: `
+      <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; padding: 24px;">
+        <h2 style="color: #37392f; margin-top: 0;">Nuevo mensaje del formulario de contacto</h2>
+        <table style="width: 100%; border-collapse: collapse;">
+          <tr>
+            <td style="padding: 8px 0; font-weight: bold; width: 180px; vertical-align: top; color: #37392f;">Nombre</td>
+            <td style="padding: 8px 0; color: #37392f;">${escapeHtml(fullName)}</td>
+          </tr>
+          <tr>
+            <td style="padding: 8px 0; font-weight: bold; vertical-align: top; color: #37392f;">Email</td>
+            <td style="padding: 8px 0; color: #37392f;">${escapeHtml(email)}</td>
+          </tr>
+          <tr>
+            <td style="padding: 8px 0; font-weight: bold; vertical-align: top; color: #37392f;">Cómo quiere ayudar</td>
+            <td style="padding: 8px 0; color: #37392f;">${escapeHtml(helpIntent || 'No especificado')}</td>
+          </tr>
+          <tr>
+            <td style="padding: 8px 0; font-weight: bold; vertical-align: top; color: #37392f;">Mensaje</td>
+            <td style="padding: 8px 0; color: #37392f;">${escapeHtml(message).replace(/\n/g, '<br>')}</td>
+          </tr>
+        </table>
+      </div>
+    `,
+  })
+
+  if (error) {
+    console.error('Resend error:', error)
+    return Response.json({ error: 'No se pudo enviar el email' }, { status: 500 })
+  }
+
+  return Response.json({ success: true })
+}

@@ -43,6 +43,8 @@ export function JoinForm({
   const [values, setValues] = useState<JoinFormValues>(() => loadJoinFormDraft())
   const [errors, setErrors] = useState<FormErrors>({})
   const [successMessage, setSuccessMessage] = useState('')
+  const [sending, setSending] = useState(false)
+  const [sendError, setSendError] = useState('')
 
   function updateField(field: keyof JoinFormValues, value: string) {
     const nextValues = { ...values, [field]: value }
@@ -66,7 +68,7 @@ export function JoinForm({
     })
   }, [prefilledHelpIntent])
 
-  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault()
 
     const nextErrors = validate(values)
@@ -74,14 +76,34 @@ export function JoinForm({
 
     if (Object.keys(nextErrors).length > 0) {
       setSuccessMessage('')
+      setSendError('')
       return
     }
 
-    saveJoinFormSubmission(values)
-    clearJoinFormDraft()
-    setValues({ fullName: '', email: '', message: '', helpIntent: '' })
-    setErrors({})
-    setSuccessMessage('Recibimos tu mensaje. Gracias por sumarte.')
+    setSending(true)
+    setSendError('')
+
+    try {
+      const response = await fetch('/api/send', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(values),
+      })
+
+      if (!response.ok) {
+        throw new Error('Error al enviar')
+      }
+
+      saveJoinFormSubmission(values)
+      clearJoinFormDraft()
+      setValues({ fullName: '', email: '', message: '', helpIntent: '' })
+      setErrors({})
+      setSuccessMessage('Recibimos tu mensaje. Gracias por sumarte.')
+    } catch {
+      setSendError('Hubo un problema al enviar el mensaje. Intentá de nuevo.')
+    } finally {
+      setSending(false)
+    }
   }
 
   return (
@@ -136,8 +158,11 @@ export function JoinForm({
         {errors.message ? <span>{errors.message}</span> : null}
       </label>
 
-      <button type="submit">{submitLabel}</button>
-      {successMessage ? <p>{successMessage}</p> : null}
+      <button type="submit" disabled={sending}>
+        {sending ? 'Enviando...' : submitLabel}
+      </button>
+      {successMessage ? <p className="join-form__success">{successMessage}</p> : null}
+      {sendError ? <p className="join-form__error">{sendError}</p> : null}
     </form>
   )
 }
