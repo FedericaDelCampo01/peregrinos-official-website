@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useInViewOnce } from '../hooks/useInViewOnce'
 import { helpOptions } from '../data/helpOptions'
+import { smoothScrollToId } from '../lib/scroll'
 import './GetInvolvedSection.css'
 
 type GetInvolvedSectionProps = {
@@ -23,11 +24,7 @@ export function GetInvolvedSection({ onSelectHelpIntent }: GetInvolvedSectionPro
     const delay = isCoarsePointer ? 220 : 0
 
     window.setTimeout(() => {
-      const formSection = document.getElementById('sumate')
-
-      if (formSection && typeof formSection.scrollIntoView === 'function') {
-        formSection.scrollIntoView({ behavior: 'smooth', block: 'start' })
-      }
+      smoothScrollToId('sumate')
     }, delay)
   }
 

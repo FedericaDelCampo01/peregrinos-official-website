@@ -1,5 +1,6 @@
 .programs-section {
   padding: 200px 24px;
+  scroll-margin-top: -160px;
 }
 
 .programs-section__inner {
