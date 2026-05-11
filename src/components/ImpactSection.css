@@ -1,0 +1,30 @@
+.impact-section {
+  padding: 200px 24px;
+  overflow: hidden;
+}
+
+.impact-section__image {
+  display: block;
+  width: min(1240px, 100%);
+  margin: 0 auto;
+  border-radius: 10px;
+}
+
+.impact-section__image--mobile {
+  display: none;
+}
+
+@media (max-width: 760px) {
+  .impact-section {
+    padding: 90px 20px;
+  }
+
+  .impact-section__image--desktop {
+    display: none;
+  }
+
+  .impact-section__image--mobile {
+    display: block;
+    width: 100%;
+  }
+}

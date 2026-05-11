@@ -1,0 +1,21 @@
+.rotating-shape {
+  width: clamp(220px, 23vw, 360px);
+  display: block;
+  animation: rotate-shape 28s linear infinite;
+}
+
+@media (max-width: 1100px) {
+  .rotating-shape {
+    width: 170px;
+  }
+}
+
+@keyframes rotate-shape {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,185 @@
+.contact-section {
+  --contact-shell-inline: 24px;
+  padding: 300px 0 0;
+}
+
+.contact-section__shell {
+  position: relative;
+  overflow: hidden;
+  padding: 0 var(--contact-shell-inline) 120px;
+}
+
+.contact-section__shell::before {
+  content: '';
+  position: absolute;
+  inset: 80px 0 0;
+  background: #37392f;
+}
+
+.contact-section__star,
+.contact-section__icon-container,
+.contact-section__inner {
+  position: relative;
+  z-index: 1;
+}
+
+.contact-section__star {
+  position: absolute;
+  left: 170px;
+  top: -216px;
+  width: 76px;
+  height: 76px;
+  background: #7197fb;
+  clip-path: polygon(50% 0%, 58% 42%, 100% 50%, 58% 58%, 50% 100%, 42% 58%, 0% 50%, 42% 42%);
+}
+
+.contact-section__icon-container {
+  position: absolute;
+  right: calc(-1 * var(--contact-shell-inline));
+  top: 0px;
+  width: 290px;
+  height: auto;
+  z-index: 1;
+}
+
+.contact-section__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 76px;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding-top: 247px;
+}
+
+.contact-section__copy {
+  display: flex;
+  flex-direction: column;
+  min-height: 589px;
+  color: white;
+}
+
+.contact-section__header p,
+.contact-section__text p {
+  margin: 0;
+}
+
+.contact-section__header p {
+  color: #93978f;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.contact-section__header h2 {
+  margin: 0;
+  font-size: 58px;
+  font-weight: 400;
+  line-height: 1.06;
+}
+
+.contact-section__text {
+  display: grid;
+  gap: 10px;
+  margin-top: 20px;
+  width: 454px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.contact-section__text p:last-child {
+  font-size: 18px;
+}
+
+.contact-section__text p:first-child {
+  font-size: 20px;
+}
+
+.contact-section__instagram {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  width: 100%;
+  max-width: 582px;
+  min-height: 88px;
+  padding: 14px 14px 14px 34px;
+  border-radius: 999px;
+  background: #93978f;
+  color: white;
+  font-family: 'Libre Baskerville', serif;
+  font-size: 20px;
+  transition: background-color 240ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.contact-section__instagram:hover,
+.contact-section__instagram:focus-visible {
+  background: #93978f;
+}
+
+.contact-section__instagram-icon {
+  width: 60px;
+  height: 60px;
+  padding: 14px;
+  border-radius: 50%;
+  background: white;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.contact-section__form-card {
+  position: relative;
+  z-index: 2;
+  background: white;
+  border-radius: 20px;
+  padding: 40px;
+}
+
+@media (max-width: 1100px) {
+  .contact-section {
+    --contact-shell-inline: 20px;
+    padding: 180px 0 0;
+  }
+
+  .contact-section__inner {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .contact-section__copy {
+    min-height: auto;
+    gap: 40px;
+  }
+
+  .contact-section__text {
+    width: 100%;
+  }
+
+  .contact-section__header h2 {
+    font-size: 44px;
+  }
+
+  .contact-section__instagram {
+    padding-left: 22px;
+    font-size: 18px;
+  }
+
+  .contact-section__form-card {
+    padding: 28px 20px;
+  }
+
+  .contact-section__icon-container {
+    top: 170px;
+    right: calc(-1 * var(--contact-shell-inline));
+    width: 180px;
+    transform: translateX(200px);
+  }
+}
+
+@media (max-width: 680px) {
+  .contact-section__shell {
+    padding: 0 var(--contact-shell-inline) 80px;
+  }
+
+  .contact-section__inner {
+    padding-top: 190px;
+  }
+}
