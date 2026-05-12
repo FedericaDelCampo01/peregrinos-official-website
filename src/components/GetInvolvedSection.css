@@ -173,9 +173,6 @@
   width: 86px;
   height: 86px;
   border-radius: 50%;
-  color: white;
-  font-size: 42px;
-  line-height: 1;
   flex-shrink: 0;
   background: var(--help-accent);
 }
@@ -240,9 +237,9 @@
 
   .get-involved-section__icon {
     display: grid;
+    place-items: center;
     width: 64px;
     height: 64px;
-    font-size: 32px;
     align-self: start;
     justify-self: end;
     background: var(--help-accent);

@@ -60,7 +60,9 @@ export function GetInvolvedSection({ onSelectHelpIntent }: GetInvolvedSectionPro
                 <span className="get-involved-section__description">{option.description}</span>
               </span>
               <span className="get-involved-section__icon">
-                <span>→</span>
+                <svg width="32" height="32" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+                  <path d="M4 11h14M12 5l6 6-6 6" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
               </span>
             </a>
           ))}
