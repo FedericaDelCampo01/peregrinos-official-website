@@ -1,5 +1,7 @@
 import { Resend } from 'resend'
 
+export const config = { runtime: 'nodejs' }
+
 const resend = new Resend(process.env.RESEND_API_KEY)
 
 type SendBody = {
@@ -18,6 +20,10 @@ function escapeHtml(str: string): string {
 }
 
 export default async function handler(req: Request): Promise<Response> {
+  if (!process.env.RESEND_API_KEY) {
+    return Response.json({ error: 'Email service not configured' }, { status: 500 })
+  }
+
   if (req.method !== 'POST') {
     return Response.json({ error: 'Method not allowed' }, { status: 405 })
   }
