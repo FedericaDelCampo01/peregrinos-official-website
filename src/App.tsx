@@ -7,6 +7,7 @@ import { Header } from './components/Header'
 import { HeroSection } from './components/HeroSection'
 import { ImpactSection } from './components/ImpactSection'
 import { ProgramsSection } from './components/ProgramsSection'
+import { ScrollToTop } from './components/ScrollToTop'
 import { StatsSection } from './components/StatsSection'
 import { TestimonialsSection } from './components/TestimonialsSection'
 import { ViewportReveal } from './components/ViewportReveal'
@@ -46,6 +47,7 @@ export default function App() {
       </main>
 
       <Footer />
+      <ScrollToTop />
     </>
   )
 }

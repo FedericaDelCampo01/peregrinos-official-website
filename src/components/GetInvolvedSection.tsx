@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useInViewOnce } from '../hooks/useInViewOnce'
 import { helpOptions } from '../data/helpOptions'
+import { smoothScrollToId } from '../lib/scroll'
 import './GetInvolvedSection.css'
 
 type GetInvolvedSectionProps = {
@@ -23,11 +24,7 @@ export function GetInvolvedSection({ onSelectHelpIntent }: GetInvolvedSectionPro
     const delay = isCoarsePointer ? 220 : 0
 
     window.setTimeout(() => {
-      const formSection = document.getElementById('sumate')
-
-      if (formSection && typeof formSection.scrollIntoView === 'function') {
-        formSection.scrollIntoView({ behavior: 'smooth', block: 'start' })
-      }
+      smoothScrollToId('sumate')
     }, delay)
   }
 
@@ -63,7 +60,9 @@ export function GetInvolvedSection({ onSelectHelpIntent }: GetInvolvedSectionPro
                 <span className="get-involved-section__description">{option.description}</span>
               </span>
               <span className="get-involved-section__icon">
-                <span>→</span>
+                <svg width="32" height="32" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+                  <path d="M4 11h14M12 5l6 6-6 6" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
               </span>
             </a>
           ))}

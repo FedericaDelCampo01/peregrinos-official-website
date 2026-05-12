@@ -1,6 +1,7 @@
 .contact-section {
   --contact-shell-inline: 24px;
   padding: 300px 0 0;
+  scroll-margin-top: -340px;
 }
 
 .contact-section__shell {
