@@ -30,7 +30,7 @@ export function ProgramsSection() {
                 <img src={program.shape} alt="" />
               </div>
               <h3>{program.title}</h3>
-              <img className="programs-section__photo" src={program.image} alt={program.title} />
+              <img className="programs-section__photo" src={program.image} alt={program.title} loading="lazy" decoding="async" />
               <p>{program.description}</p>
             </article>
           ))}

@@ -1,5 +1,5 @@
 import shapeThree from '../assets/shape 3.svg'
-import testimonialImage from '../assets/Testimonial Image.png'
+import testimonialImage from '../assets/Testimonial Image.webp'
 import './TestimonialsSection.css'
 
 export function TestimonialsSection() {
@@ -11,7 +11,7 @@ export function TestimonialsSection() {
 
           <div className="testimonials-section__image-stack">
             <div className="testimonials-section__image-shell">
-              <img src={testimonialImage} alt="Voluntarios y un niño caminando por el barrio" />
+              <img src={testimonialImage} alt="Voluntarios y un niño caminando por el barrio" loading="lazy" decoding="async" />
             </div>
             <img aria-hidden="true" className="testimonials-section__shape" src={shapeThree} alt="" />
           </div>

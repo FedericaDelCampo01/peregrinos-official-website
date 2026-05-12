@@ -1,5 +1,5 @@
-import impactContainer from '../assets/Impact Container.png'
-import impactBoxMobile from '../assets/Impact Box_Mobile.png'
+import impactContainer from '../assets/Impact Container.webp'
+import impactBoxMobile from '../assets/Impact Box_Mobile.webp'
 import './ImpactSection.css'
 
 export function ImpactSection() {
@@ -9,11 +9,15 @@ export function ImpactSection() {
         className="impact-section__image impact-section__image--desktop"
         src={impactContainer}
         alt="Collage de impacto de Peregrinos"
+        loading="lazy"
+        decoding="async"
       />
       <img
         className="impact-section__image impact-section__image--mobile"
         src={impactBoxMobile}
         alt="Collage de impacto de Peregrinos"
+        loading="lazy"
+        decoding="async"
       />
     </section>
   )

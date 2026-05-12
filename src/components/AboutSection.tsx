@@ -50,15 +50,15 @@ export function AboutSection() {
           </div>
 
           <div className="about-section__image about-section__image--small-right">
-            <img src={aboutImages.smallRight} alt="Encuentro de Peregrinos en el barrio" />
+            <img src={aboutImages.smallRight} alt="Encuentro de Peregrinos en el barrio" loading="lazy" decoding="async" />
           </div>
 
           <div className="about-section__image about-section__image--large-bottom">
-            <img src={aboutImages.largeBottom} alt="Grupo grande de Peregrinos con los chicos" />
+            <img src={aboutImages.largeBottom} alt="Grupo grande de Peregrinos con los chicos" loading="lazy" decoding="async" />
           </div>
 
           <div className="about-section__image about-section__image--small-top">
-            <img src={aboutImages.smallTop} alt="Paisaje del barrio Aquiles Lanza" />
+            <img src={aboutImages.smallTop} alt="Paisaje del barrio Aquiles Lanza" loading="lazy" decoding="async" />
           </div>
         </div>
       </div>
