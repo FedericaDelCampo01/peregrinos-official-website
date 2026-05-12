@@ -1,3 +1,5 @@
+export const config = { runtime: 'edge' }
+
 type SendBody = {
   fullName: string
   email: string
@@ -38,7 +40,7 @@ export default async function handler(req: Request): Promise<Response> {
   const controller = new AbortController()
   const timeoutId = setTimeout(() => controller.abort(), 8000)
 
-  let res: globalThis.Response
+  let res: Response
   try {
     res = await fetch('https://api.resend.com/emails', {
       signal: controller.signal,
