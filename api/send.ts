@@ -36,7 +36,7 @@ export default async function handler(req: Request): Promise<Response> {
   }
 
   const { error } = await resend.emails.send({
-    from: 'Peregrinos <noreply@peregrinos.uy>',
+    from: 'Peregrinos <noreply@peregrinos.com.uy>',
     to: 'movimiento.peregrinos@gmail.com',
     replyTo: email,
     subject: `Nuevo mensaje de ${fullName}`,
