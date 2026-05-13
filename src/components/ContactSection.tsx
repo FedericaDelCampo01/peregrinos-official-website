@@ -25,7 +25,7 @@ export function ContactSection({ prefilledHelpIntent = '' }: ContactSectionProps
                 Si querés conocer más sobre Peregrinos, colaborar con el proyecto o sumarte de
                 alguna manera, escribinos.{' '}
                 <br />
-                Nos encantaría escucharte!
+                ¡Nos encantaría escucharte!
               </p>
             </div>
 
@@ -35,7 +35,7 @@ export function ContactSection({ prefilledHelpIntent = '' }: ContactSectionProps
               target="_blank"
               rel="noreferrer"
             >
-              <span>Seguinos en Instagram!</span>
+              <span>¡Seguinos en Instagram!</span>
               <img className="contact-section__instagram-icon" src={arrowUpright} alt="" aria-hidden="true" />
             </a>
           </div>

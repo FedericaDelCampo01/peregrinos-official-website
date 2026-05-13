@@ -37,7 +37,7 @@ describe('App', () => {
 
     expect(
       screen.getByRole('heading', {
-        name: '“Ella es la gran misionera, ella obrará milagros”',
+        name: '”Ella es la gran misionera, Ella obrará milagros”',
       }),
     ).toBeInTheDocument()
 
@@ -70,7 +70,7 @@ describe('App', () => {
 
     expect(screen.getByText('Nuestra historia')).toBeInTheDocument()
     expect(screen.getByText('Nuestros espacios')).toBeInTheDocument()
-    expect(screen.getByText('Formá parte!')).toBeInTheDocument()
+    expect(screen.getByText('¡Formá parte!')).toBeInTheDocument()
     expect(screen.getByText(/Bajo Tu manto/i)).toBeInTheDocument()
     expect(screen.getByText('¿Querés saber más?')).toBeInTheDocument()
     expect(screen.getByText('movimiento.peregrinos@gmail.com')).toBeInTheDocument()

@@ -39,7 +39,7 @@ describe('ContactSection', () => {
     expect(
       container.querySelector('.contact-section__text')?.textContent?.replace(/\s+/g, ' ').trim(),
     ).toBe(
-      'Si querés conocer más sobre Peregrinos, colaborar con el proyecto o sumarte de alguna manera, escribinos. Nos encantaría escucharte!',
+      'Si querés conocer más sobre Peregrinos, colaborar con el proyecto o sumarte de alguna manera, escribinos. ¡Nos encantaría escucharte!',
     )
   })
 })

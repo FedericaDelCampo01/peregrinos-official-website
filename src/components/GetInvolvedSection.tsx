@@ -33,8 +33,8 @@ export function GetInvolvedSection({ onSelectHelpIntent }: GetInvolvedSectionPro
       <div className="get-involved-section__inner">
         <div className="get-involved-section__header">
           <div>
-            <p>¿Como ayudar?</p>
-            <h2>Formá parte!</h2>
+            <p>¿Cómo ayudar?</p>
+            <h2>¡Formá parte!</h2>
           </div>
 
           <div className="get-involved-section__copy">

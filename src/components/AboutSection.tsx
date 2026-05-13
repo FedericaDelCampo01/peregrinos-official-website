@@ -16,13 +16,13 @@ export function AboutSection() {
       <div className="about-section__inner">
         <div className="about-section__content">
           <div className="about-section__header">
-            <p>¿Quienes somos?</p>
+            <p>¿Quiénes somos?</p>
             <h2>Nuestra historia</h2>
           </div>
 
           <div className="about-section__text">
             <p>
-              Peregrinos nace en 2022 y hoy es el apostolado del Movimiento Schoenstatt en Uruguay.
+              Peregrinos nace en 2022 y hoy es el apostolado del Movimiento Apostólico de Schoenstatt en Uruguay.
               Inspirado por la misión educativa y apostólica de este movimiento de la Iglesia
               Católica, el proyecto busca acompañar a niños y familias a través de la educación y
               la formación en valores.
@@ -34,7 +34,7 @@ export function AboutSection() {
             </p>
 
             <p>
-              A través de estas actividades buscamos acompañar su crecimiento, apoyar a sus
+              A través de estas actividades, buscamos acompañar su crecimiento, apoyar a sus
               familias y fortalecer la comunidad.
             </p>
           </div>
