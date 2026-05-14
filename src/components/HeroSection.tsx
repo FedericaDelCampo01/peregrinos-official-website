@@ -7,7 +7,7 @@ export function HeroSection() {
   return (
     <section id="hero" className="hero-section">
       <div className="hero-section__copy">
-        <h1>”Ella es la gran misionera, Ella obrará milagros”</h1>
+        <h1>“Ella es la gran misionera, Ella obrará milagros”</h1>
         <p>
           Peregrinos acompaña a niños en contexto vulnerable a través de la educación, el apoyo
           escolar y la formación en valores.
