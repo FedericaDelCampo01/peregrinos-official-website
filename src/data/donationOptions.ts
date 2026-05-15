@@ -25,7 +25,7 @@ export const donationOptions: DonationOption[] = [
     amount: '$1.000',
     description: 'Un guiso compartido para muchas familias',
     color: '#7197fb',
-    textColor: '#37392f',
+    textColor: '#f8f6f1',
     href: 'https://mpago.la/19heYHY',
   },
   {
