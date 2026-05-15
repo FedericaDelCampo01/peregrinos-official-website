@@ -1,6 +1,7 @@
 import { AutoSlider } from './AutoSlider'
 import { RotatingShape } from './RotatingShape'
 import heroAccent from '../assets/hero/Shape grow.svg'
+import { smoothScrollToId } from '../lib/scroll'
 import './HeroSection.css'
 
 export function HeroSection() {
@@ -12,6 +13,22 @@ export function HeroSection() {
           Peregrinos acompaña a niños en contexto vulnerable a través de la educación, el apoyo
           escolar y la formación en valores.
         </p>
+        <div className="hero-section__actions">
+          <a
+            className="hero-section__cta hero-section__cta--primary"
+            href="#donar"
+            onClick={(e) => { e.preventDefault(); smoothScrollToId('donar') }}
+          >
+            Quiero hacer una donación
+          </a>
+          <a
+            className="hero-section__cta hero-section__cta--secondary"
+            href="#sumate"
+            onClick={(e) => { e.preventDefault(); smoothScrollToId('sumate') }}
+          >
+            Quiero ser parte
+          </a>
+        </div>
       </div>
 
       <div className="hero-section__gallery">
