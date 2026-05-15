@@ -117,6 +117,7 @@
 @media (max-width: 600px) {
   .donations-section {
     padding: 120px 24px;
+    scroll-margin-top: -20px;
   }
 
   .donations-section__header h2 {

@@ -12,10 +12,17 @@ export function GetInvolvedSection({ onSelectHelpIntent }: GetInvolvedSectionPro
   const [activeValue, setActiveValue] = useState('')
   const { elementRef, isInView } = useInViewOnce({ threshold: 0.3, rootMargin: '0px 0px -5% 0px' })
 
-  function handleActivation(event: React.MouseEvent<HTMLAnchorElement>, value: string) {
+  function handleActivation(
+    event: React.MouseEvent<HTMLAnchorElement>,
+    value: string,
+    scrollTarget: string,
+  ) {
     event.preventDefault()
-    onSelectHelpIntent(value)
     setActiveValue(value)
+
+    if (scrollTarget === 'sumate') {
+      onSelectHelpIntent(value)
+    }
 
     const isCoarsePointer =
       typeof window.matchMedia === 'function'
@@ -24,7 +31,7 @@ export function GetInvolvedSection({ onSelectHelpIntent }: GetInvolvedSectionPro
     const delay = isCoarsePointer ? 220 : 0
 
     window.setTimeout(() => {
-      smoothScrollToId('sumate')
+      smoothScrollToId(scrollTarget)
     }, delay)
   }
 
@@ -50,10 +57,10 @@ export function GetInvolvedSection({ onSelectHelpIntent }: GetInvolvedSectionPro
           {helpOptions.map((option) => (
             <a
               key={option.title}
-              href="#sumate"
+              href={`#${option.scrollTarget ?? 'sumate'}`}
               className={`get-involved-section__item ${activeValue === option.value ? 'is-active' : ''}`}
               style={{ ['--help-accent' as string]: option.color }}
-              onClick={(event) => handleActivation(event, option.value)}
+              onClick={(event) => handleActivation(event, option.value, option.scrollTarget ?? 'sumate')}
             >
               <span className="get-involved-section__content">
                 <span className="get-involved-section__title">{option.title}</span>

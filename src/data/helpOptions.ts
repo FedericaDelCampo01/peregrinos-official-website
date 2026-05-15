@@ -3,6 +3,7 @@ export type HelpOption = {
   description: string
   color: string
   value: string
+  scrollTarget?: string
 }
 
 export const helpOptions: HelpOption[] = [
@@ -12,6 +13,7 @@ export const helpOptions: HelpOption[] = [
       'Podés colaborar con un aporte económico para sostener actividades, materiales y encuentros durante todo el año.',
     color: '#efa8e0',
     value: 'Hacer una donación',
+    scrollTarget: 'donar',
   },
   {
     title: 'Ser madrina o padrino',
