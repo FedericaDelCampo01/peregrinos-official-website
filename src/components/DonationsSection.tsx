@@ -10,7 +10,7 @@ export function DonationsSection() {
       <div className="donations-section__inner">
         <div className="donations-section__header">
           <p>Tu donación</p>
-          <h2>Hace posible seguir acompañando</h2>
+          <h2>Hacé posible seguir acompañando</h2>
         </div>
 
         <div
