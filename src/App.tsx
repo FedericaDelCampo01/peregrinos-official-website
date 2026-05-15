@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { AboutSection } from './components/AboutSection'
 import { ContactSection } from './components/ContactSection'
+import { DonationsSection } from './components/DonationsSection'
 import { Footer } from './components/Footer'
 import { GetInvolvedSection } from './components/GetInvolvedSection'
 import { Header } from './components/Header'
@@ -40,6 +41,9 @@ export default function App() {
         </ViewportReveal>
         <ViewportReveal>
           <TestimonialsSection />
+        </ViewportReveal>
+        <ViewportReveal>
+          <DonationsSection />
         </ViewportReveal>
         <ViewportReveal>
           <ContactSection prefilledHelpIntent={selectedHelpIntent} />
