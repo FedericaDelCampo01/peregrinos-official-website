@@ -45,6 +45,27 @@ export function DonationsSection() {
             </a>
           ))}
         </div>
+
+        <div className="donations-section__custom">
+          <p>¿Querés donar otro monto?</p>
+          <a
+            href="https://link.mercadopago.com.uy/peregrinosuy"
+            target="_blank"
+            rel="noreferrer"
+            className="donations-section__custom-link"
+          >
+            Elegí el monto que quieras
+            <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path
+                d="M4 10h12M10 4l6 6-6 6"
+                stroke="currentColor"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </a>
+        </div>
       </div>
     </section>
   )
