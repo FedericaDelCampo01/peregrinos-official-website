@@ -1,6 +1,7 @@
 import aboutIconContainer from '../assets/about/about-icon-container.svg'
 import aboutImageCard from '../assets/about/about-image.svg'
 import aboutPhoto from '../assets/fotos pere/about_image_2x.webp'
+import aboutPhotoLarge from '../assets/fotos pere/peregrinos_quienes_somos.jpg'
 import './AboutSection.css'
 
 export function AboutSection() {
@@ -49,7 +50,7 @@ export function AboutSection() {
           </div>
 
           <div className="about-section__image about-section__image--large-bottom">
-            <img src={aboutPhoto} alt="Grupo grande de Peregrinos con los chicos" loading="lazy" decoding="async" />
+            <img src={aboutPhotoLarge} alt="Grupo grande de Peregrinos con los chicos" loading="lazy" decoding="async" />
           </div>
 
           <div className="about-section__image about-section__image--small-top">
