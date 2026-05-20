@@ -1,12 +1,7 @@
 import aboutIconContainer from '../assets/about/about-icon-container.svg'
 import aboutImageCard from '../assets/about/about-image.svg'
+import aboutPhoto from '../assets/fotos pere/about_image_2x.webp'
 import './AboutSection.css'
-
-const aboutImages = {
-  smallTop: 'https://www.figma.com/api/mcp/asset/8143c041-4662-42a4-b1b6-5d762a06c550',
-  smallRight: 'https://www.figma.com/api/mcp/asset/10f30d06-d0fc-4fdb-bf74-54a228c90917',
-  largeBottom: 'https://www.figma.com/api/mcp/asset/830b1b66-8914-4bd8-ba1c-1cfd337f12cd',
-}
 
 export function AboutSection() {
   return (
@@ -50,15 +45,15 @@ export function AboutSection() {
           </div>
 
           <div className="about-section__image about-section__image--small-right">
-            <img src={aboutImages.smallRight} alt="Encuentro de Peregrinos en el barrio" loading="lazy" decoding="async" />
+            <img src={aboutPhoto} alt="Encuentro de Peregrinos en el barrio" loading="lazy" decoding="async" />
           </div>
 
           <div className="about-section__image about-section__image--large-bottom">
-            <img src={aboutImages.largeBottom} alt="Grupo grande de Peregrinos con los chicos" loading="lazy" decoding="async" />
+            <img src={aboutPhoto} alt="Grupo grande de Peregrinos con los chicos" loading="lazy" decoding="async" />
           </div>
 
           <div className="about-section__image about-section__image--small-top">
-            <img src={aboutImages.smallTop} alt="Paisaje del barrio Aquiles Lanza" loading="lazy" decoding="async" />
+            <img src={aboutPhoto} alt="Paisaje del barrio Aquiles Lanza" loading="lazy" decoding="async" />
           </div>
         </div>
       </div>
