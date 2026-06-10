@@ -1,5 +1,6 @@
 import { useInViewOnce } from '../hooks/useInViewOnce'
 import { programOptions } from '../data/programOptions'
+import { smoothScrollToId } from '../lib/scroll'
 import './ProgramsSection.css'
 
 export function ProgramsSection() {
@@ -14,7 +15,11 @@ export function ProgramsSection() {
             <h2>Nuestros espacios</h2>
           </div>
 
-          <a href="#sumate" className="programs-section__cta">
+          <a
+            href="#sumate"
+            className="programs-section__cta"
+            onClick={(e) => { e.preventDefault(); smoothScrollToId('sumate') }}
+          >
             Quiero formar parte
           </a>
         </div>

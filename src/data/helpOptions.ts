@@ -18,7 +18,7 @@ export const helpOptions: HelpOption[] = [
   {
     title: 'Ser madrina o padrino',
     description:
-      'Podés colaborar preparando o donando una merienda para compartir con los chicos y apoyar el proyecto de una manera concreta.',
+      'Podés colaborar preparando o donando una merienda para compartir con los chicos durante las actividades.',
     color: '#7197fb',
     value: 'Ser madrina o padrino',
   },

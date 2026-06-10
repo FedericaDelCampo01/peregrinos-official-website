@@ -28,7 +28,9 @@ export function DonationsSection() {
             >
               <div>
                 <div className="donations-section__amount">{option.amount}</div>
-                <p className="donations-section__description">{option.description}</p>
+                {option.description && (
+                  <p className="donations-section__description">{option.description}</p>
+                )}
               </div>
               <span className="donations-section__cta">
                 Donar

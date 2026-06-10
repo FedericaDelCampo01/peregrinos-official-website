@@ -28,7 +28,7 @@ export function Header() {
         ))}
       </nav>
 
-      <a className="site-header__cta" href="#sumate" onClick={(e) => handleAnchorClick(e, '#sumate')}>
+      <a className="site-header__cta" href="#sumate" onClick={(e) => handleAnchorClick(e, '#donar')}>
         Quiero ser parte
       </a>
     </header>

@@ -35,7 +35,7 @@
 .get-involved-section__copy {
   display: grid;
   gap: 6px;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.5;
 }
 
@@ -112,8 +112,8 @@
 
 .get-involved-section__content {
   position: relative;
-  width: min(800px, 100%);
-  min-height: 86px;
+  width: min(900px, 100%);
+  min-height: 60px;
 }
 
 .get-involved-section__title {
@@ -152,7 +152,7 @@
 .get-involved-section__item:hover .get-involved-section__title,
 .get-involved-section__item:focus-visible .get-involved-section__title,
 .get-involved-section__item.is-active .get-involved-section__title {
-  transform: translateY(-42px);
+  transform: translateY(-32px);
 }
 
 .get-involved-section__item:hover,
@@ -217,7 +217,7 @@
 
   .get-involved-section__content {
     display: grid;
-    gap: 28px;
+    gap: 20px;
     min-height: 0;
   }
 

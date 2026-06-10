@@ -1,6 +1,6 @@
 export type DonationOption = {
   amount: string
-  description: string
+  description?: string
   color: string
   textColor: string
   href: string

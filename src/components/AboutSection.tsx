@@ -18,20 +18,15 @@ export function AboutSection() {
 
           <div className="about-section__text">
             <p>
-              Peregrinos nace en 2022 y hoy es el apostolado del Movimiento Apostólico de Schoenstatt en Uruguay.
-              Inspirado por la misión educativa y apostólica de este movimiento de la Iglesia
-              Católica, el proyecto busca acompañar a niños y familias a través de la educación y
-              la formación en valores.
+              Peregrinos nace como respuesta a las necesidades que dejó la pandemia en muchas familias de Malvín Norte. Lo que comenzó como una iniciativa para acompañar a niños y adolescentes del barrio fue creciendo hasta convertirse en un espacio de encuentro para la comunidad.
             </p>
 
             <p>
-              El proyecto se desarrolla en el barrio Aquiles Lanza, en Malvín Norte, donde
-              generamos espacios de aprendizaje, juego y encuentro para los chicos del barrio.
+              El proyecto se desarrolla en el barrio Aquiles Lanza, donde generamos espacios de aprendizaje, juego y crecimiento.
             </p>
 
             <p>
-              A través de estas actividades, buscamos acompañar su crecimiento, apoyar a sus
-              familias y fortalecer la comunidad.
+              Hoy, Peregrinos es el apostolado del Movimiento Apostólico de Schoenstatt en Uruguay y continúa creciendo gracias al compromiso de quienes forman parte y apoyan el proyecto.
             </p>
           </div>
         </div>
