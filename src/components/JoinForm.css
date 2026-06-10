@@ -24,6 +24,14 @@
   font-size: 16px;
   font-family: inherit;
   line-height: 24px;
+  outline: none;
+}
+
+.join-form input:focus,
+.join-form select:focus,
+.join-form textarea:focus {
+  outline: 4px solid #93978f;
+  outline-offset: 2px;
 }
 
 .join-form select {
@@ -41,8 +49,11 @@
 }
 
 .join-form input::placeholder,
-.join-form select,
 .join-form textarea::placeholder {
+  color: rgba(60, 62, 51, 0.5);
+}
+
+.join-form select:has(option[value=""]:checked) {
   color: rgba(60, 62, 51, 0.5);
 }
 

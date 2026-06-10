@@ -16,8 +16,7 @@ export function ContactSection({ prefilledHelpIntent = '' }: ContactSectionProps
         <div className="contact-section__inner">
           <div className="contact-section__copy">
             <div className="contact-section__header">
-              <p>Contactate con nosotros</p>
-              <h2>¿Querés saber más?</h2>
+              <h2>Contactate con nosotros</h2>
             </div>
 
             <div className="contact-section__text">
