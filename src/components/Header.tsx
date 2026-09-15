@@ -1,12 +1,7 @@
 import logo from '../assets/logo-peregrinos.svg'
 import { navItems } from '../data/navItems'
-import { smoothScrollToId } from '../lib/scroll'
+import { handleAnchorClick } from '../lib/scroll'
 import './Header.css'
-
-function handleAnchorClick(event: React.MouseEvent<HTMLAnchorElement>, href: string) {
-  event.preventDefault()
-  smoothScrollToId(href.replace('#', ''))
-}
 
 export function Header() {
   return (
@@ -28,8 +23,8 @@ export function Header() {
         ))}
       </nav>
 
-      <a className="site-header__cta" href="#sumate" onClick={(e) => handleAnchorClick(e, '#donar')}>
-        Quiero ser parte
+      <a className="site-header__cta" href="#donar" onClick={(e) => handleAnchorClick(e, '#donar')}>
+        Donar
       </a>
     </header>
   )

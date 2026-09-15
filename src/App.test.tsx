@@ -93,6 +93,26 @@ describe('App', () => {
     expect(programOptions[0].image).toContain('Program%20Image_1')
   })
 
+  it('surfaces donating from the top of the page', () => {
+    render(<App />)
+
+    expect(screen.getByRole('link', { name: 'Donar' })).toHaveAttribute('href', '#donar')
+    expect(screen.getByRole('link', { name: 'Quiero donar' })).toHaveAttribute('href', '#donar')
+
+    expect(
+      screen.getByRole('heading', { name: 'Con poco se sostiene mucho' }),
+    ).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: '$300 Una semana de meriendas' })).toHaveAttribute(
+      'href',
+      '#donar',
+    )
+    expect(
+      screen.getByRole('link', { name: 'Ver todas las formas de donar' }),
+    ).toHaveAttribute('href', '#donar')
+
+    expect(document.getElementById('donar')).not.toBeNull()
+  })
+
   it('prefills the help-intent select when a help item is activated', async () => {
     const user = userEvent.setup()
 

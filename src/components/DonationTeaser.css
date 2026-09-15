@@ -1,0 +1,131 @@
+.donation-teaser {
+  padding: 40px 24px 20px;
+}
+
+.donation-teaser__inner {
+  max-width: 1240px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.donation-teaser__header {
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.donation-teaser__eyebrow {
+  margin: 0 0 10px;
+  color: #93978f;
+  font-size: 18px;
+}
+
+.donation-teaser__header h2 {
+  margin: 0;
+  color: #37392f;
+  font-family: 'Libre Baskerville', serif;
+  font-size: clamp(30px, 3.4vw, 40px);
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.donation-teaser__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.donation-teaser__chip {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-height: 116px;
+  padding: 20px 24px;
+  border-radius: 16px;
+  opacity: 0;
+  transform: translateY(32px);
+  transition:
+    transform 300ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 300ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.donation-teaser__grid.is-visible .donation-teaser__chip {
+  animation: donation-teaser-rise 620ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.donation-teaser__grid.is-visible .donation-teaser__chip:nth-child(2) {
+  animation-delay: 120ms;
+}
+
+.donation-teaser__grid.is-visible .donation-teaser__chip:nth-child(3) {
+  animation-delay: 240ms;
+}
+
+.donation-teaser__grid.is-visible .donation-teaser__chip:nth-child(4) {
+  animation-delay: 360ms;
+}
+
+.donation-teaser__chip:hover,
+.donation-teaser__chip:focus-visible {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(55, 57, 47, 0.18);
+}
+
+.donation-teaser__amount {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 30px;
+  line-height: 1;
+}
+
+.donation-teaser__description {
+  font-size: 15px;
+  line-height: 1.3;
+}
+
+.donation-teaser__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 28px;
+  font-size: 18px;
+  border-bottom: 1.5px solid currentColor;
+  padding-bottom: 2px;
+  transition: opacity 240ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.donation-teaser__link:hover,
+.donation-teaser__link:focus-visible {
+  opacity: 0.6;
+}
+
+@keyframes donation-teaser-rise {
+  from {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 1100px) {
+  .donation-teaser {
+    padding: 32px 20px 12px;
+  }
+
+  .donation-teaser__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .donation-teaser__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .donation-teaser__chip {
+    min-height: 0;
+  }
+}

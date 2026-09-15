@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { AboutSection } from './components/AboutSection'
 import { ContactSection } from './components/ContactSection'
+import { DonationTeaser } from './components/DonationTeaser'
 import { DonationsSection } from './components/DonationsSection'
 import { Footer } from './components/Footer'
 import { GetInvolvedSection } from './components/GetInvolvedSection'
@@ -26,6 +27,9 @@ export default function App() {
         </ViewportReveal>
         <ViewportReveal>
           <StatsSection />
+        </ViewportReveal>
+        <ViewportReveal>
+          <DonationTeaser />
         </ViewportReveal>
         <ViewportReveal>
           <AboutSection />

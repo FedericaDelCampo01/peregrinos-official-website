@@ -1,3 +1,5 @@
+import type { MouseEvent } from 'react'
+
 function easeInOutCubic(t: number): number {
   return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2
 }
@@ -36,4 +38,9 @@ export function smoothScrollToId(id: string, duration = 900): void {
   }
 
   requestAnimationFrame(step)
+}
+
+export function handleAnchorClick(event: MouseEvent<HTMLAnchorElement>, href: string): void {
+  event.preventDefault()
+  smoothScrollToId(href.replace('#', ''))
 }

@@ -1,6 +1,7 @@
 import { AutoSlider } from './AutoSlider'
 import { RotatingShape } from './RotatingShape'
 import heroAccent from '../assets/hero/Shape grow.svg'
+import { handleAnchorClick } from '../lib/scroll'
 import './HeroSection.css'
 
 export function HeroSection() {
@@ -12,6 +13,23 @@ export function HeroSection() {
           Impulsamos el crecimiento de niños, adolescentes y sus familias a través de la educación,
           el vínculo cercano y una comunidad comprometida con su desarrollo.
         </p>
+
+        <div className="hero-section__actions">
+          <a
+            className="hero-section__cta hero-section__cta--primary"
+            href="#donar"
+            onClick={(e) => handleAnchorClick(e, '#donar')}
+          >
+            Quiero donar
+          </a>
+          <a
+            className="hero-section__cta hero-section__cta--secondary"
+            href="#sumate"
+            onClick={(e) => handleAnchorClick(e, '#sumate')}
+          >
+            Quiero ser parte
+          </a>
+        </div>
       </div>
 
       <div className="hero-section__gallery">
