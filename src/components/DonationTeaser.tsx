@@ -10,8 +10,8 @@ export function DonationTeaser() {
     <section className="donation-teaser" aria-labelledby="donation-teaser-title">
       <div className="donation-teaser__inner">
         <div className="donation-teaser__header">
-          <p className="donation-teaser__eyebrow">Tu donación</p>
-          <h2 id="donation-teaser-title">Con poco se sostiene mucho</h2>
+          <p className="donation-teaser__eyebrow">Soñadores</p>
+          <h2 id="donation-teaser-title">Con poco por mes se sostiene mucho</h2>
         </div>
 
         <div
@@ -26,7 +26,10 @@ export function DonationTeaser() {
               className="donation-teaser__chip"
               style={{ backgroundColor: option.color, color: option.textColor }}
             >
-              <span className="donation-teaser__amount">{option.amount}</span>
+              <span className="donation-teaser__amount">
+                {option.amount}
+                <span className="donation-teaser__period"> /mes</span>
+              </span>
               {option.description && (
                 <span className="donation-teaser__description">{option.description}</span>
               )}
@@ -39,7 +42,7 @@ export function DonationTeaser() {
           href="#donar"
           onClick={(e) => handleAnchorClick(e, '#donar')}
         >
-          Ver todas las formas de donar
+          Sumate a ser Soñador
           <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true">
             <path
               d="M4 10h12M10 4l6 6-6 6"
