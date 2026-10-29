@@ -26,6 +26,14 @@
   color: #37392f;
 }
 
+.donations-section__header .donations-section__intro {
+  max-width: 640px;
+  margin: 20px 0 0;
+  color: #55564d;
+  font-size: 20px;
+  line-height: 1.4;
+}
+
 .donations-section__grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -75,6 +83,32 @@
   font-weight: 400;
   line-height: 1;
   margin-bottom: 16px;
+}
+
+.donations-section__period {
+  font-size: 20px;
+}
+
+.donations-section__card.is-featured {
+  box-shadow: 0 0 0 3px #fedf6a;
+}
+
+.donations-section__card.is-featured:hover,
+.donations-section__card.is-featured:focus-visible {
+  box-shadow:
+    0 0 0 3px #fedf6a,
+    0 20px 48px rgba(0, 0, 0, 0.12);
+}
+
+.donations-section__badge {
+  display: inline-block;
+  margin-bottom: 20px;
+  border-radius: 999px;
+  padding: 6px 14px;
+  background: #fedf6a;
+  color: #37392f;
+  font-size: 14px;
+  font-weight: 500;
 }
 
 .donations-section__description {

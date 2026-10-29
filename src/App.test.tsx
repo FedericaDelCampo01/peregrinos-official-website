@@ -100,17 +100,21 @@ describe('App', () => {
     expect(screen.getByRole('link', { name: 'Quiero donar' })).toHaveAttribute('href', '#donar')
 
     expect(
-      screen.getByRole('heading', { name: 'Con poco se sostiene mucho' }),
+      screen.getByRole('heading', { name: 'Con poco por mes se sostiene mucho' }),
     ).toBeInTheDocument()
-    expect(screen.getByRole('link', { name: '$300 Una semana de meriendas' })).toHaveAttribute(
+    expect(screen.getByRole('link', { name: '$250 /mes Las meriendas de un niño' })).toHaveAttribute(
       'href',
       '#donar',
     )
     expect(
-      screen.getByRole('link', { name: 'Ver todas las formas de donar' }),
+      screen.getByRole('link', { name: 'Sumate a ser Soñador' }),
     ).toHaveAttribute('href', '#donar')
 
     expect(document.getElementById('donar')).not.toBeNull()
+    expect(screen.getByRole('link', { name: 'Doná el monto que quieras' })).toHaveAttribute(
+      'href',
+      'https://link.mercadopago.com.uy/peregrinos',
+    )
   })
 
   it('prefills the help-intent select when a help item is activated', async () => {
