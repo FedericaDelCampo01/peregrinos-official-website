@@ -100,12 +100,8 @@ describe('App', () => {
     expect(screen.getByRole('link', { name: 'Quiero donar' })).toHaveAttribute('href', '#donar')
 
     expect(
-      screen.getByRole('heading', { name: 'Con poco por mes se sostiene mucho' }),
+      screen.getByRole('heading', { name: 'Hacé posibles muchos sueños' }),
     ).toBeInTheDocument()
-    expect(screen.getByRole('link', { name: '$250 /mes Las meriendas de un niño' })).toHaveAttribute(
-      'href',
-      '#donar',
-    )
     expect(
       screen.getByRole('link', { name: 'Sumate a ser Soñador' }),
     ).toHaveAttribute('href', '#donar')

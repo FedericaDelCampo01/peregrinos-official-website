@@ -1,44 +1,20 @@
-import { useInViewOnce } from '../hooks/useInViewOnce'
-import { donationOptions } from '../data/donationOptions'
 import { handleAnchorClick } from '../lib/scroll'
 import './DonationTeaser.css'
 
 export function DonationTeaser() {
-  const { elementRef, isInView } = useInViewOnce({ threshold: 0.2, rootMargin: '0px 0px -5% 0px' })
-
   return (
     <section className="donation-teaser" aria-labelledby="donation-teaser-title">
       <div className="donation-teaser__inner">
         <div className="donation-teaser__header">
           <p className="donation-teaser__eyebrow">Soñadores</p>
-          <h2 id="donation-teaser-title">Con poco por mes se sostiene mucho</h2>
-        </div>
-
-        <div
-          ref={elementRef}
-          className={`donation-teaser__grid ${isInView ? 'is-visible' : ''}`.trim()}
-        >
-          {donationOptions.map((option) => (
-            <a
-              key={option.amount}
-              href="#donar"
-              onClick={(e) => handleAnchorClick(e, '#donar')}
-              className="donation-teaser__chip"
-              style={{ backgroundColor: option.color, color: option.textColor }}
-            >
-              <span className="donation-teaser__amount">
-                {option.amount}
-                <span className="donation-teaser__period"> /mes</span>
-              </span>
-              {option.description && (
-                <span className="donation-teaser__description">{option.description}</span>
-              )}
-            </a>
-          ))}
+          <h2 id="donation-teaser-title">Hacé posibles muchos sueños</h2>
+          <p className="donation-teaser__text">
+            Con un aporte mensual acompañás a un niño en su día a día.
+          </p>
         </div>
 
         <a
-          className="donation-teaser__link"
+          className="donation-teaser__button"
           href="#donar"
           onClick={(e) => handleAnchorClick(e, '#donar')}
         >
